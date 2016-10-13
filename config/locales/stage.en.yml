@@ -1,0 +1,7 @@
+en:
+  active_admin:
+    stages: "Stages"
+
+  stage:
+    inspection_control: "inspection control"
+    days_left: "days left"

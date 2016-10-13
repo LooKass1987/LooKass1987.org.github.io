@@ -1,0 +1,76 @@
+ruby:
+  params = request.params[:contact] || {}
+
+
+form#form-contact.clearfix[
+  method='post'
+  action=contact_path
+]
+  = hidden_field_tag :authenticity_token, form_authenticity_token
+
+  fieldset.form-group
+    label.sr-only[for='contact-name'] = t 'contact_form.name.label'
+    .input-group
+      .input-group-addon: .icon.icon-fw.icon-user[aria-hidden='true']
+      input&text#contact-name.form-control.form-control-required[
+        name='contact[name]'
+        title=t('contact_form.name.valid')
+        pattern='.{3,128}'
+        placeholder=t('contact_form.name.label')
+        required
+        value=params[:name]
+      ]
+
+  fieldset.form-group
+    label.sr-only[for='contact-email'] = t 'contact_form.email.label'
+    .input-group
+      .input-group-addon: .icon.icon-fw.icon-envelope[aria-hidden='true']
+      input&email#contact-email.form-control.form-control-required[
+        name='contact[email]'
+        title=t('contact_form.email.valid')
+        placeholder=t('contact_form.email.label')
+        required
+        value=params[:email]
+      ]
+
+  fieldset.form-group
+    label.sr-only[for='contact-phone'] = t 'contact_form.phone.label'
+    .input-group
+      .input-group-addon: .icon.icon-fw.icon-phone[aria-hidden='true']
+      input&tel#contact-phone.form-control[
+      name='contact[phone]'
+      title=t('contact_form.phone.valid')
+      pattern='[0-9\+\-\(\)\s]{7,}'
+      placeholder=t('contact_form.phone.label')
+      value=params[:phone]
+    ]
+
+  fieldset.form-group
+    label.sr-only[for='contact-subject'] = t 'contact_form.subject.label'
+    .input-group
+      .input-group-addon: .icon.icon-fw.icon-tag[aria-hidden='true']
+      input&text#contact-subject.form-control[
+        name='contact[subject]'
+        placeholder=t('contact_form.subject.label')
+        value=params[:subject]
+      ]
+
+  fieldset.form-group.m-b-0
+    label.sr-only[for='contact-content'] = t 'contact_form.content.label'
+    textarea#contact-content.form-control.form-control-required[
+      name='contact[content]'
+      rows=8
+      placeholder=t('contact_form.content.label')
+      data-redactor=true
+    ] == params[:content]
+
+  p.text-muted.font-weight-light.pull-xs-right
+    small.icon.icon-exclamation-circle.text-cyan>[aria-hidden='true']
+    = t 'contact_form.required'
+
+  button&submit.btn.btn-lg.btn-primary: span.icon.icon-send[aria-hidden='true']
+
+
+= stylesheet_link_tag 'redactor', property: 'stylesheet'
+javascript:
+  $(document).on('turbolinks:load', ProJ.redactor("#{asset_path 'redactor.js'}"))

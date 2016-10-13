@@ -1,0 +1,598 @@
+<dataSource name="Rails íöññ.ðô: development">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="2.6">
+    <schema id="1">
+      <visible>1</visible>
+    </schema>
+    <table id="2" parent="1" name="active_admin_comments" />
+    <table id="3" parent="1" name="agents" />
+    <table id="4" parent="1" name="ar_internal_metadata" />
+    <table id="5" parent="1" name="articles" />
+    <table id="6" parent="1" name="attestats" />
+    <table id="7" parent="1" name="certificates" />
+    <table id="8" parent="1" name="customers" />
+    <table id="9" parent="1" name="partners" />
+    <table id="10" parent="1" name="schema_migrations" />
+    <table id="11" parent="1" name="sqlite_sequence" />
+    <table id="12" parent="1" name="stages" />
+    <table id="13" parent="1" name="users" />
+    <column id="14" parent="2" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="15" parent="2" name="namespace">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="16" parent="2" name="body">
+      <data-type>TEXT(0,-1)|12</data-type>
+    </column>
+    <column id="17" parent="2" name="resource_type">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="18" parent="2" name="resource_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="19" parent="2" name="author_type">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="20" parent="2" name="author_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="21" parent="2" name="created_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="22" parent="2" name="updated_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <index id="23" parent="2" name="index_active_admin_comments_on_namespace">
+      <columns>namespace</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="24" parent="2" name="index_active_admin_comments_on_resource_type_and_resource_id">
+      <columns>resource_type
+resource_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="25" parent="2" name="index_active_admin_comments_on_author_type_and_author_id">
+      <columns>author_type
+author_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="26" parent="2">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="27" parent="3" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="28" parent="3" name="active">
+      <data-type>BOOLEAN(0,-1)|4</data-type>
+      <default-expression>'f'</default-expression>
+    </column>
+    <column id="29" parent="3" name="role">
+      <data-type>INTEGER(1) (0,-1)|4</data-type>
+      <default-expression>0</default-expression>
+    </column>
+    <column id="30" parent="3" name="name">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="31" parent="3" name="email">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="32" parent="3" name="phone">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="33" parent="3" name="address">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="34" parent="3" name="user_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="35" parent="3" name="created_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="36" parent="3" name="updated_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <index id="37" parent="3" name="index_agents_on_active">
+      <columns>active</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="38" parent="3" name="index_agents_on_role">
+      <columns>role</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="39" parent="3" name="index_agents_on_name">
+      <columns>name</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="40" parent="3" name="index_agents_on_user_id">
+      <columns>user_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="41" parent="3">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="42" parent="4" name="key">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="43" parent="4" name="value">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="44" parent="4" name="created_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="45" parent="4" name="updated_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <key id="46" parent="4">
+      <columns>key</columns>
+      <primary>1</primary>
+    </key>
+    <column id="47" parent="5" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="48" parent="5" name="published">
+      <data-type>BOOLEAN(0,-1)|4</data-type>
+      <default-expression>'f'</default-expression>
+    </column>
+    <column id="49" parent="5" name="published_at">
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="50" parent="5" name="banner">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="51" parent="5" name="header">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="52" parent="5" name="annotation">
+      <data-type>TEXT(0,-1)|12</data-type>
+    </column>
+    <column id="53" parent="5" name="content">
+      <mandatory>1</mandatory>
+      <data-type>TEXT(0,-1)|12</data-type>
+    </column>
+    <column id="54" parent="5" name="title">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="55" parent="5" name="keywords">
+      <data-type>VARCHAR(80) (0,-1)|12</data-type>
+    </column>
+    <column id="56" parent="5" name="description">
+      <data-type>VARCHAR(80) (0,-1)|12</data-type>
+    </column>
+    <column id="57" parent="5" name="created_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="58" parent="5" name="updated_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <index id="59" parent="5" name="index_articles_on_published_at">
+      <columns>published_at</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="60" parent="5" name="index_articles_on_header">
+      <columns>header</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="61" parent="5">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="62" parent="6" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="63" parent="6" name="active">
+      <data-type>BOOLEAN(0,-1)|4</data-type>
+      <default-expression>'f'</default-expression>
+    </column>
+    <column id="64" parent="6" name="status">
+      <data-type>INTEGER(2) (0,-1)|4</data-type>
+      <default-expression>0</default-expression>
+    </column>
+    <column id="65" parent="6" name="number">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(32) (0,-1)|12</data-type>
+    </column>
+    <column id="66" parent="6" name="object">
+      <mandatory>1</mandatory>
+      <data-type>TEXT(0,-1)|12</data-type>
+    </column>
+    <column id="67" parent="6" name="issued_at">
+      <data-type>DATE(0,-1)|12</data-type>
+    </column>
+    <column id="68" parent="6" name="closed_at">
+      <data-type>DATE(0,-1)|12</data-type>
+    </column>
+    <column id="69" parent="6" name="customer_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="70" parent="6" name="agent_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="71" parent="6" name="created_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="72" parent="6" name="updated_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <index id="73" parent="6" name="index_attestats_on_active">
+      <columns>active</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="74" parent="6" name="index_attestats_on_status">
+      <columns>status</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="75" parent="6" name="index_attestats_on_number">
+      <columns>number</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="76" parent="6" name="index_attestats_on_customer_id">
+      <columns>customer_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="77" parent="6" name="index_attestats_on_agent_id">
+      <columns>agent_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="78" parent="6">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="79" parent="7" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="80" parent="7" name="active">
+      <data-type>BOOLEAN(0,-1)|4</data-type>
+      <default-expression>'f'</default-expression>
+    </column>
+    <column id="81" parent="7" name="status">
+      <data-type>INTEGER(2) (0,-1)|4</data-type>
+      <default-expression>0</default-expression>
+    </column>
+    <column id="82" parent="7" name="number">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(32) (0,-1)|12</data-type>
+    </column>
+    <column id="83" parent="7" name="object">
+      <mandatory>1</mandatory>
+      <data-type>TEXT(0,-1)|12</data-type>
+    </column>
+    <column id="84" parent="7" name="classifier">
+      <data-type>VARCHAR(32) (0,-1)|12</data-type>
+    </column>
+    <column id="85" parent="7" name="classifier_code">
+      <data-type>VARCHAR(32) (0,-1)|12</data-type>
+    </column>
+    <column id="86" parent="7" name="grouping">
+      <data-type>VARCHAR(32) (0,-1)|12</data-type>
+    </column>
+    <column id="87" parent="7" name="issued_at">
+      <data-type>DATE(0,-1)|12</data-type>
+    </column>
+    <column id="88" parent="7" name="closed_at">
+      <data-type>DATE(0,-1)|12</data-type>
+    </column>
+    <column id="89" parent="7" name="customer_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="90" parent="7" name="agent_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="91" parent="7" name="created_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="92" parent="7" name="updated_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <index id="93" parent="7" name="index_certificates_on_active">
+      <columns>active</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="94" parent="7" name="index_certificates_on_status">
+      <columns>status</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="95" parent="7" name="index_certificates_on_number">
+      <columns>number</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="96" parent="7" name="index_certificates_on_customer_id">
+      <columns>customer_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="97" parent="7" name="index_certificates_on_agent_id">
+      <columns>agent_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="98" parent="7">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="99" parent="8" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="100" parent="8" name="active">
+      <data-type>BOOLEAN(0,-1)|4</data-type>
+      <default-expression>'f'</default-expression>
+    </column>
+    <column id="101" parent="8" name="name">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="102" parent="8" name="email">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="103" parent="8" name="phone">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="104" parent="8" name="address">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="105" parent="8" name="user_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="106" parent="8" name="created_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="107" parent="8" name="updated_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <index id="108" parent="8" name="index_customers_on_active">
+      <columns>active</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="109" parent="8" name="index_customers_on_name">
+      <columns>name</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="110" parent="8" name="index_customers_on_user_id">
+      <columns>user_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="111" parent="8">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="112" parent="9" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="113" parent="9" name="published">
+      <data-type>BOOLEAN(0,-1)|4</data-type>
+      <default-expression>'f'</default-expression>
+    </column>
+    <column id="114" parent="9" name="index">
+      <data-type>INTEGER(0,-1)|4</data-type>
+      <default-expression>0</default-expression>
+    </column>
+    <column id="115" parent="9" name="logotype">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="116" parent="9" name="name">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="117" parent="9" name="content">
+      <data-type>TEXT(0,-1)|12</data-type>
+    </column>
+    <column id="118" parent="9" name="phone">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="119" parent="9" name="email">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="120" parent="9" name="address">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="121" parent="9" name="website">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="122" parent="9" name="created_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="123" parent="9" name="updated_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <index id="124" parent="9" name="index_partners_on_published">
+      <columns>published</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="125" parent="9" name="index_partners_on_index">
+      <columns>index</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="126" parent="9" name="index_partners_on_name">
+      <columns>name</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="127" parent="9">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="128" parent="10" name="version">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <key id="129" parent="10">
+      <columns>version</columns>
+      <primary>1</primary>
+    </key>
+    <column id="130" parent="11" name="name">
+      <data-type>(0,-1)|12</data-type>
+    </column>
+    <column id="131" parent="11" name="seq">
+      <data-type>(0,-1)|12</data-type>
+    </column>
+    <column id="132" parent="12" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="133" parent="12" name="operate">
+      <data-type>VARCHAR(2) (0,-1)|12</data-type>
+    </column>
+    <column id="134" parent="12" name="operate_at">
+      <mandatory>1</mandatory>
+      <data-type>DATE(0,-1)|12</data-type>
+    </column>
+    <column id="135" parent="12" name="operation">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="136" parent="12" name="passed_at">
+      <data-type>DATE(0,-1)|12</data-type>
+    </column>
+    <column id="137" parent="12" name="resource_type">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="138" parent="12" name="resource_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="139" parent="12" name="created_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="140" parent="12" name="updated_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <index id="141" parent="12" name="index_stages_on_operate_at">
+      <columns>operate_at</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="142" parent="12" name="index_stages_on_resource_type_and_resource_id">
+      <columns>resource_type
+resource_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="143" parent="12">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="144" parent="13" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="145" parent="13" name="email">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(0,-1)|12</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="146" parent="13" name="encrypted_password">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(0,-1)|12</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="147" parent="13" name="remember_created_at">
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="148" parent="13" name="sign_in_count">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+      <default-expression>0</default-expression>
+    </column>
+    <column id="149" parent="13" name="current_sign_in_at">
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="150" parent="13" name="last_sign_in_at">
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="151" parent="13" name="current_sign_in_ip">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="152" parent="13" name="last_sign_in_ip">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="153" parent="13" name="created_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="154" parent="13" name="updated_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="155" parent="13" name="is_admin">
+      <data-type>BOOLEAN(0,-1)|4</data-type>
+      <default-expression>'f'</default-expression>
+    </column>
+    <column id="156" parent="13" name="in_staff">
+      <data-type>BOOLEAN(0,-1)|4</data-type>
+      <default-expression>'f'</default-expression>
+    </column>
+    <column id="157" parent="13" name="name">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="158" parent="13" name="phone">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="159" parent="13" name="address">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <index id="160" parent="13" name="index_users_on_email">
+      <columns>email</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="161" parent="13" name="index_users_on_is_admin_and_in_staff">
+      <columns>is_admin
+in_staff</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="162" parent="13">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

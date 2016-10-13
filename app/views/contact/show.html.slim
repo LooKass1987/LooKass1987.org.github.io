@@ -1,0 +1,16 @@
+.ymap.card.m-b-2.preload[
+  aria-hidden= "true"
+  data-name=t('ncsc.title')
+  data-info='Центральный офис'
+  data-center="#{LOCAL[:geo][:latitude]} #{LOCAL[:geo][:longitude]}"
+  data-placemark= "#{LOCAL[:geo][:latitude]} #{LOCAL[:geo][:longitude]}"
+]
+
+p.font-size-sm.text-muted.text-lg-center
+  ' Вы хотите получать больше информации о
+  em.text-nowrap «Национальном центре сертификации и стандартизации»
+  | ?
+  br
+  | Заполните форму ниже и мы ответим вам в ближайшее время.
+
+= render 'form'

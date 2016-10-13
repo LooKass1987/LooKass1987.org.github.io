@@ -1,0 +1,15 @@
+@import "frontend/variables";
+@import "frontend/mixins";
+@import "../../../vendor/assets/stylesheets/bootstrap/variables";
+@import "../../../vendor/assets/stylesheets/bootstrap/mixins";
+
+#statics {
+  .articles {
+    .tag {
+      margin-top: .5rem;
+    }
+    .align {
+      font-size: .8125rem;
+    }
+  }
+}

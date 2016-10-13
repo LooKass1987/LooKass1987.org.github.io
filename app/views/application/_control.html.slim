@@ -1,0 +1,21 @@
+ruby:
+  params = request.params[:control] || {}
+
+
+form#form-control.form-search.clearfix[
+  method='post'
+  action=control_path
+]
+  = hidden_field_tag :authenticity_token, form_authenticity_token
+
+  .input-group
+    input&text#control-number.form-control[
+      name='control[number]'
+      title=t('static.control.title')
+      pattern='[Rr][Uu]\.[Нн][Цц][Сс][Сс]\.([А-Яа-я]{2}\.\d{3}|\d{3}\.\d{3}\.\d{1}\.[А-Яа-я]{2}\.\d{5})'
+      placeholder=t('static.control.placeholder')
+      required
+      value=params[:name]
+    ]
+    .input-group-btn
+      button&submit.btn.btn-link.text-href: span.icon.icon-search-validate[aria-hidden='true']

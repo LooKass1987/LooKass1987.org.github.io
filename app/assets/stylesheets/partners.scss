@@ -1,0 +1,18 @@
+@import "frontend/variables";
+@import "frontend/mixins";
+@import "../../../vendor/assets/stylesheets/bootstrap/variables";
+@import "../../../vendor/assets/stylesheets/bootstrap/mixins";
+
+#partners {
+  .catalog {
+    margin: 2rem 0;
+    address {
+      margin: .5rem 0 0;
+      font-size: .75rem;
+      text-transform: uppercase;
+    }
+    .media-image {
+      min-width: 12rem;
+    }
+  }
+}

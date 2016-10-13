@@ -1,0 +1,33 @@
+http://нцсс.рф/
+http://xn--m1aias.xn--p1ai/
+
+нцсс.рф
+    yamail-f65aaa33ba66     CNAME       mail.yandex.ru.
+
+
+ncsc.msk.ru
+    yamail-19aa70764a03     CNAME       mail.yandex.ru.
+    mail._domainkey         TXT         v=DKIM1\; k=rsa\; t=s\; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCk+ELAlHve/IPhWwNrt4wWMqo+R/TLZTBtYqiyZHnNfhjMO4KXBsnZIaliOXXwrBeqYfjd0r16C1ELwc8w/TbdlMk56ZxtpBxIAmOaA0WcnidR7Xt0gSMZ6HaTAKukgoKyWr37nLq05nbsSoLXmwCDrwwzkV3WkITdAViOXQlHNwIDAQAB
+
+--------------------------------------------------
+
+Yandex
+
+    акаунт вебмастера
+        логин: ncsc.msk
+        пароль: Ncsc6888065
+
+    акаунт почты
+        логин: ncsc.post
+        пароль: Ncsc6888065
+
+    почта default
+        логин: default@ncsc.msk.ru
+        пароль: +1234567
+
+    почта mail
+        логин: mail@ncsc.msk.ru
+        пароль: Ncsc6888065
+
+    127006, г. Москва, ул. Малая Дмитровка, д. 18а, стр. 3     https://clck.ru/9uRC6
+    129594, г. Москва, 3-я ул. Марьиной рощи, д. 4, корп. 2    https://clck.ru/9uRCJ

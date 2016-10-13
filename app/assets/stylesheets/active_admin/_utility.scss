@@ -1,0 +1,23 @@
+@for $i from 1 through 9 {
+  .h-size--#{$i * 10} {
+    width: percentage($i / 10) !important;
+  }
+}
+
+.h-font--max {
+  font-size: 110%;
+}
+
+.h-font--min {
+  font-size: 90%;
+}
+
+.c-text--readable {
+  overflow-y: auto;
+  max-height: 10rem;
+  padding: .75rem 1rem;
+  background-color: rgba(255, 255, 255, .7);
+  border: $border-width solid rgba(255, 255, 255, .9);
+  border-radius: $border-radius;
+  cursor: default;
+}

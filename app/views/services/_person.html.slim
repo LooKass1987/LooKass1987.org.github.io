@@ -1,0 +1,26 @@
+.card.panel
+  h4.collapsed.card-title.icon-pseudo.icon-bars.text-href.onclick@tab[
+    data-toggle="collapse"
+    data-parent="##{id}"
+    data-target="##{id}#{i}"
+    aria-expanded="false"
+    aria-controls="#{id}#{i}"
+  ] = name
+
+  .collapse@tabpanel[id="#{id}#{i}"]
+    .card-footer
+      dl.row
+        - certificate.each do |item|
+          dt.col-xs-12.col-md-4 Сертификат эксперта:
+          dd.col-xs-12.col-md-8
+            ' №
+            em.text-monospace.text-cyan.font-weight-bold> = item[:numb]
+            ' выдан
+            = item[:data]
+          dt.col-xs-12.col-md-4 Область аккредитации:
+          dd.col-xs-12.col-md-8
+            ul
+              - item[:aria].each_index do |i|
+                li
+                  = item[:aria][i]
+                  = i < item[:aria].length - 1 ? ';' : '.'

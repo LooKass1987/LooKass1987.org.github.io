@@ -1,0 +1,49 @@
+//= require_self
+
+//= require redactor
+
+
+$sidebar-width: 320px;
+
+// Active Admin's got SASS!
+@import "active_admin/mixins";
+@import "active_admin/base";
+
+// Bootstrap
+$grid-breakpoints: ();
+@import "../../../vendor/assets/stylesheets/bootstrap/variables";
+@import "../../../vendor/assets/stylesheets/bootstrap/mixins";
+@import "../../../vendor/assets/stylesheets/bootstrap/images";
+@import "../../../vendor/assets/stylesheets/bootstrap/utilities";
+@import "../../../vendor/assets/stylesheets/bootstrap/custom-forms";
+
+@import "utility";
+@import "show";
+@import "form";
+@import "vendor";
+
+
+html {
+  overflow-y: scroll;
+}
+
+.status_tag {
+  background: #6090DB;
+}
+
+#active_admin_content {
+  #main_content_wrapper {
+    #main_content {
+      margin-right: ($sidebar-width + 30px);
+    }
+  }
+}
+
+#utils {
+  padding-left: 1rem;
+  line-height: 100%;
+  > a {
+    font-size: 125%;
+    line-height: inherit;
+  }
+}

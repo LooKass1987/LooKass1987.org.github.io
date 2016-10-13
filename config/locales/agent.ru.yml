@@ -1,0 +1,20 @@
+ru:
+  activerecord:
+    attributes:
+      agent:
+        active: "Активно"
+        role: "Роль"
+        name: "Наименование"
+        email: "Электронный адрес"
+        phone: "Телефон"
+        address: "Почтовый адрес"
+        user: "Аккаунт"
+        certificates: "Сертификаты"
+        attestats: "Аттестаты"
+        created_at: "Создано"
+        updated_at: "Изменено"
+    models:
+      agent: "Агент"
+
+  active_admin:
+    agents: "Агенты"

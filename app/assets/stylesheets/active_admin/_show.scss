@@ -1,0 +1,51 @@
+#main_content {
+  th {
+    &.h-size--image {
+      width: 6.5rem;
+    }
+
+    &.h-size--integer {
+      width: 4rem;
+    }
+
+    &.h-size--boolean {
+      width: 5rem;
+    }
+
+    &.h-size--date {
+      width: 6rem;
+    }
+
+    &.h-size--datetime,
+    &.col-created_at {
+      width: 7rem;
+    }
+
+    &.h-size--actions--short {
+      width: 4rem;
+    }
+
+    &.col-selectable {
+      width: 1rem;
+    }
+
+    &.col-id {
+      width: 2.5rem;
+    }
+
+    &.col-actions {
+      width: 9.5rem;
+    }
+  }
+
+  td {
+    a {
+      &:hover {
+        .img-thumbnail {
+          border-color: $link-hover-color;
+        }
+      }
+    }
+  }
+}
+

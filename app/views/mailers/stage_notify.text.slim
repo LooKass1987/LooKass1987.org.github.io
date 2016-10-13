@@ -1,0 +1,11 @@
+' №
+= @model.resource.number
+
+=> I18n.l @model.operate_at, format: :long
+| (
+= @model.operation.blank? ? t('stage.inspection_control') : @model.operation
+| )
+
+= t 'stage.days_left'
+' :
+= (@model.operate_at - DateTime.now.to_date).to_i

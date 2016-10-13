@@ -1,0 +1,67 @@
+ruby:
+  @sidebar = 'services/aside/accreditation'
+  @title = t 'service.accreditation.title'
+  @keywords = t 'service.accreditation.keywords', default: ''
+  @description = t 'service.accreditation.description', default: ''
+  @header = t 'service.accreditation.header'
+
+
+p.m-b-3
+  ' Орган по аккредитации
+  strong> «Национальный центр сертификации и стандартизации»
+  | проводит работу по аккредитации физических и/или юридических лиц, осуществляет контроль за соблюдением
+    аккредитованными физическими и/или юридическими лицами правил, установленных в Системе «НЦСС».
+
+.boss.row.m-b-3
+  .col-xs-12.col-md-6.col-lg-7.font-size-sm.m-b-1
+    ' Руководитель
+    em> Органа по аккредитации
+    ' Системы «Национальный центр сертификации и стандартизации» (
+    em Система «НЦСС»
+    | )
+  .col-xs-12.col-md-6.col-lg-5.font-size-lg.text-md-right
+    b.font-size-base Быков Андрей&nbsp;Рудольфович
+    br
+    a.icon-pseudo.icon-phone[href="tel://#{strip_tags(LOCAL[:phone]).tr(' ()-', '')}"] == LOCAL[:phone]
+    br
+    a.icon-pseudo.icon-envelope[
+      href="#"
+      aria-hidden='true'
+      data-mailto=Base64.encode64(LOCAL[:email]).squish
+    ]
+
+.accreditation
+  h3.m-b-2 Органы по сертификации
+  #agency.accordion.m-b-3@tablist[aria-multiselectable="true"]
+    - @accreditation[:agency].each_with_index  do |item, i|
+      - if not item[:name].blank?
+        - item[:i] = i
+        - item[:id] = 'agency'
+        - item[:arias] = 'Область аккредитации'
+        = render partial: 'entity', locals: item
+
+  h3.m-b-2 Испытательные лаборатории
+  #laboratory.accordion.m-b-3@tablist[aria-multiselectable="true"]
+    - @accreditation[:laboratory].each_with_index  do |item, i|
+      - if not item[:name].blank?
+        - item[:i] = i
+        - item[:id] = 'laboratory'
+        - item[:arias] = 'Область испытаний <small>(инструментального контроля)</small>'
+        = render partial: 'entity', locals: item
+
+  h3.m-b-2 Подтверждение компетентности испытательных лабораторий в соответствии с требованиями ГОСТ ИСО/МЭК 17025-2009
+  #competence.accordion.m-b-3@tablist[aria-multiselectable="true"]
+    - @accreditation[:competence].each_with_index  do |item, i|
+      - if not item[:name].blank?
+        - item[:i] = i
+        - item[:id] = 'competence'
+        - item[:arias] = 'Область испытаний <small>(инструментального контроля)</small>'
+        = render partial: 'entity', locals: item
+
+  h3.m-b-2 Эксперты по сертификации
+  #expert.accordion@tablist[aria-multiselectable="true"]
+    - @accreditation[:expert].each_with_index  do |item, i|
+      - if not item[:name].blank?
+        - item[:i] = i
+        - item[:id] = 'expert'
+        = render partial: 'person', locals: item

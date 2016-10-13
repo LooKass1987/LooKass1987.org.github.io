@@ -1,0 +1,24 @@
+.card.panel
+  h4.collapsed.card-title.icon-pseudo.icon-bars.text-href.onclick@tab[
+    data-toggle="collapse"
+    data-parent="#content"
+    data-target="#_#{i}"
+    aria-expanded="#{i == 0 && true || false}"
+    aria-controls="_#{i}"
+  ] == q
+
+  .collapse@tabpanel[
+    id="_#{i}"
+    class=(i == 0 && 'in' || nil)
+  ]
+    .card-footer
+      - if a.is_a?(Array)
+        - a.each do |s|
+          - if s.is_a?(Array)
+            ul
+              - s.each do |l|
+                li == l.squish
+          - else
+            p == s.squish
+      - else
+        p == a.squish

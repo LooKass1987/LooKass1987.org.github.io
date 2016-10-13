@@ -1,0 +1,17 @@
+@import "frontend/variables";
+@import "frontend/mixins";
+@import "../../../vendor/assets/stylesheets/bootstrap/variables";
+@import "../../../vendor/assets/stylesheets/bootstrap/mixins";
+
+#articles {
+  .catalog {
+    margin: 2rem 0;
+    time {
+      font-size: .75rem;
+      text-transform: uppercase;
+    }
+    .media-image {
+      min-width: 12rem;
+    }
+  }
+}

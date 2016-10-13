@@ -1,0 +1,179 @@
+#content {
+  margin-bottom: 3rem;
+
+  h1 {
+    padding-top: .5rem;
+    min-height: 4rem;
+    color: $color-cyan-darker;
+    small,
+    .small {
+      display: block;
+      color: $gray-light;
+      font-size: 50%;
+      line-height: 2;
+    }
+    sup {
+      top: -1em;
+      left: .5em;
+      color: $gray-light;
+      font-size: 50%;
+    }
+  }
+
+  > .headline:first-child {
+    margin-bottom: 3rem;
+  }
+
+  > p {
+    text-align: justify;
+  }
+
+  // Imperavi
+  .redactor-toolbar {
+    @extend .control-required;
+    background-color: $color-white-light;
+  }
+
+  .redactor-placeholder:after {
+    color: $input-color-placeholder !important;
+    font-size: 1rem;
+  }
+}
+
+// Boss
+.boss {
+  .font-size-sm {
+    padding-top: .375rem;
+  }
+}
+
+// Media
+.media {
+  &.divided{
+    margin-top: 1rem;
+    padding-bottom: 1.25rem;
+    &:not(:last-child) {
+      border-bottom: 4px solid $color-white-lighter;
+    }
+  }
+
+  .media-left,
+  .media-right {
+    @include media-breakpoint-down(xs) {
+      display: block;
+      margin-bottom: .5rem;
+    }
+  }
+
+  .media-heading {
+    color: $color-cyan;
+    @include media-breakpoint-down(md) {
+      font-size: 1.25rem;
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: 1rem;
+    }
+  }
+
+  .media-image {
+    display: block;
+    padding: .25rem;
+    background-color: $color-white-lighter;
+    border: 1px solid $input-border-color;
+    @include border-radius($border-radius);
+    &:hover {
+      background-color: transparentize($link-hover-color, .9);
+      border-color: transparentize($link-hover-color, .5);
+    }
+  }
+
+  .media-content {
+    font-size: .875rem;
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .striped {
+    padding: 0 .75rem;
+  }
+
+  &:nth-child(odd) {
+    .striped {
+      padding: .75rem;
+      background-color: $color-white-lighter;
+      @include border-radius($border-radius);
+    }
+  }
+}
+
+// Accordion
+.accordion {
+  .card {
+    border-color: $input-border-color;
+    background-color: $card-cap-bg;
+  }
+
+  .card-title {
+    position: relative;
+    vertical-align: middle;
+    margin: 0;
+    padding: .75rem 1rem .75rem 2.5rem;
+    color: $gray-dark;
+    font-size: 1.125rem;
+    text-shadow: 0 1px 0 #fff;
+    &.icon-pseudo {
+      &:before {
+        float: left;
+        margin: 0 0 0 -1.5rem;
+        color: $color-active;
+        font-size: 55%;
+      }
+      &[aria-expanded="true"] {
+        &:before {
+          color: $color-accent;
+        }
+      }
+    }
+    @include media-breakpoint-down(md) {
+      font-size: 1rem;
+      &.icon-pseudo {
+        &:before {
+          font-size: 65%;
+        }
+      }
+    }
+  }
+
+  .card-footer {
+    padding-top: ($card-spacer-y * 2);
+    background-color: #fff;
+  }
+}
+
+// Pagination
+.pagination {
+  margin: 0;
+  line-height: 1.1;
+}
+
+.page-link {
+  &.truncate {
+    @include hover-focus {
+      background-color: $pagination-bg;
+    }
+  }
+}
+
+// Yandex MAP
+.ymap {
+  height: 25rem;
+
+  &.card {
+    padding: .25rem;
+  }
+
+  :first-child {
+    z-index: 1;
+  }
+}

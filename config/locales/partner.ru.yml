@@ -1,0 +1,27 @@
+ru:
+  activerecord:
+    attributes:
+      partner:
+        published: "Опубликовано"
+        index: "Индекс"
+        logotype: "Логотип"
+        name: "Наименование"
+        content: "Описание"
+        email: "Электронный адрес"
+        phone: "Телефон"
+        address: "Почтовый адрес"
+        url: "Ссылка"
+        created_at: "Создано"
+        updated_at: "Изменено"
+    models:
+      partner: "Партнёр"
+
+  active_admin:
+    partners: "Партнёры"
+
+  partner:
+    index:
+      label: "Партнёры"
+      title: "НЦСС · Партнёры"
+      description: "Партнёры Национального Центра Сертификации и Стандартизации"
+      header: "Партнёры НЦСС"

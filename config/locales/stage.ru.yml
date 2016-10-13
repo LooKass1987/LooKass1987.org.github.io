@@ -1,0 +1,21 @@
+ru:
+  activerecord:
+    attributes:
+      stage:
+        operate: "Тип"
+        operate_at: "Дата"
+        passed_at: "Пройден"
+        operation: "Описание"
+        resource: "Ресурс"
+        resource_type: "Тип ресурса"
+        created_at: "Создано"
+        updated_at: "Изменено"
+    models:
+      stage: "Этап"
+
+  active_admin:
+    stages: "Этапы"
+
+  stage:
+    inspection_control: "инспекционный контроль"
+    days_left: "осталось дней"

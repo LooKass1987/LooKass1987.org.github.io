@@ -1,0 +1,17 @@
+- cache @model do
+  scss:
+    time {
+      position: relative;
+      top: -2rem;
+      color: #799;
+      font-size: 90%;
+    }
+
+
+  = time_tag @model.published_at, class: 'text-uppercase'
+
+  - if !@model.banner.blank?
+    = imagic_tag @model.banner, class: 'img-thumbnail pull-md-left m-r-1 m-b-1',
+                                alt: @model.header.mb_chars.downcase
+
+  == @model.content

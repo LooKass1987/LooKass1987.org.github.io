@@ -1,0 +1,111 @@
+a.active,
+.active > a:not([data-toggle="dropdown"]) {
+  cursor: default;
+}
+
+.js {
+  .onclick {
+    cursor: pointer;
+  }
+}
+
+.shadow {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, .7);
+
+  a > &,
+  .js &.onclick,
+  .js &[data-lightbox] {
+    transition: box-shadow .2s;
+    &:hover {
+      box-shadow: 3px 3px 12px rgba(0, 0, 0, .9);
+    }
+  }
+}
+
+.scaled {
+  transition: all .4s ease-in-out;
+  will-change: transform, box-shadow;
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .5);
+    transform: perspective(600px) rotateX(45deg);
+  }
+}
+
+.duplet {
+  small,
+  .small {
+    display: block;
+    font-size: 50%;
+    line-height: 1.25;
+  }
+}
+
+.icon-pseudo {
+  &:before {
+    top: .075em;
+    font-size: $small-font-size;
+  }
+}
+
+.preload {
+  background-color: transparentize($color-white-light, .5);
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    width: 64px;
+    height: 64px;
+    margin-left: -32px;
+    margin-top: -32px;
+    background: image_url('loader/sector.128.gif') center no-repeat transparent;
+    background-size: cover;
+  }
+
+  &.error {
+    &::after {
+      background-image: image_url('system/error.png');
+    }
+  }
+}
+
+.side-caret {
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -2px;
+    width: 75%;
+    height: 5px;
+    background-color: $color-cyan;
+    border-radius: 2px;
+  }
+  &.side-left {
+    &:after {
+      left: -2px;
+    }
+  }
+  &.side-right {
+    &:after {
+      right: -2px;
+    }
+  }
+}
+
+.headline {
+  margin: .5rem 0 2rem;
+  border-bottom: 1px dotted #ddd;
+
+  > h1,
+  > h2,
+  > h3 {
+    display: inline-block;
+    margin: 0 0 -2px 0;
+    padding-bottom: 4px;
+    color: $color-cyan-darker;
+    border-bottom: 2px solid $color-active;
+  }
+}

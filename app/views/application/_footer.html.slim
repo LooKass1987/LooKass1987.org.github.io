@@ -1,0 +1,36 @@
+- cache do
+  footer#footer
+    .wrapper
+      .container
+        .side-add.side-left.side-lock.side-caret
+          .copyright
+            a.engine.ir.m-r-1.hidden-xs-down[
+              rel='nofollow'
+              href='//rubyonrails.org/'
+              target='_blank'
+              ] Ruby on Rails
+            span%copyrightYear> = DateTime.now.year
+            ' &copy;
+            span%copyrightHolder
+              a%author.h-text--href[
+                href='//fref.ru?rel=author'
+                target='_blank'
+                ] FREF
+
+
+        .side-prime.side-right.side-lock
+          .credits
+            .row
+              .col-xs-12.col-sm-9.col-md-8.col-lg-7.col-xl-6
+                = render 'control'
+
+              .col-xs-12.col-sm-3.col-md-4.col-lg-5.col-xl-6.text-xs-right.hidden-xs-down
+                - if YANDEX[:metrika] && current_user && current_user.staff?
+                  span.icon.icon-yandex-metrika.onclick.m-r-1[
+                    aria-hidden='true'
+                    data-ymet=YANDEX[:metrika]
+                    ]
+                span.icon.icon-w3c.onclick[
+                  aria-hidden='true'
+                  data-w3c=true
+                  ]

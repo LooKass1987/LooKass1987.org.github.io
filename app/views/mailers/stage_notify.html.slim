@@ -1,0 +1,23 @@
+p
+  ' №
+  - if @model.resource_type == 'Certificate'
+    a[
+      href=admin_certificate_url(@model.resource_id)
+      target='_blank'
+    ] = @model.resource.number
+  - else
+    a[
+      href=admin_attestat_url(@model.resource_id)
+      target= "_blank"
+    ] = @model.resource.number
+
+p
+  b> = l @model.operate_at, format: :long
+  | (
+  = @model.operation.blank? ? t('stage.inspection_control') : @model.operation
+  | )
+
+p
+  = t 'stage.days_left'
+  ' :
+  b[style=(@model.operate_await < 0 && 'color:#ff0000')] = @model.operate_await

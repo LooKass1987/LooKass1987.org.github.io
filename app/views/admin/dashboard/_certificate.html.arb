@@ -1,0 +1,51 @@
+panel 'Сертификаты' do
+  table do
+    tr do
+      th class: 'h-size--40' do
+        'Действует'
+      end
+      th class: 'text-success' do
+        Certificate.continue.count
+      end
+    end
+    tr do
+      th 'Возобновлён'
+      th class: 'text-success' do
+        Certificate.resume.count
+      end
+    end
+    tr do
+      th 'Окончен'
+      th Certificate.close.count
+    end
+    tr do
+      th 'Остановлен'
+      th class: 'text-danger' do
+        Certificate.suspend.count
+      end
+    end
+    tr do
+      th 'Аннулирован'
+      th class: 'text-danger' do
+        Certificate.cancel.count
+      end
+    end
+    tr do
+      th 'Черновик'
+      th class: 'text-muted' do
+        Certificate.draft.count
+      end
+    end
+  end
+
+  h4 class: 'm-t-2' do
+    'Последние:'
+  end
+
+  ul do
+    Certificate.recent(5).map do |model|
+      li link_to("#{model.number} · #{model.object.truncate(80, separator: ' ', omission: '...')}",
+                 admin_certificate_path(model))
+    end
+  end
+end

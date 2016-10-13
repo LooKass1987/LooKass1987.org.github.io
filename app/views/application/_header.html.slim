@@ -1,0 +1,58 @@
+ruby:
+  def brand
+    request.path == root_path ?
+      {tag: 'span', class: 'brand'} :
+      {tag: 'a', href: root_path, class: 'brand text-href'}
+  end
+
+
+header#header.clearfix.m-b-1
+  .side-add.side-left.hidden-md-down
+    *brand
+      | Национальный Центр
+      br
+      | Сертификации и
+      br
+      | Стандартизации
+
+  .side-prime.side-right
+    = render 'navbar'
+
+    .row
+      .col-xs-12.col-sm-6
+        = render 'yandex.search'
+      .col-xs-12.col-sm-6.text-sm-right
+        a.icon-pseudo.icon-phone.text-href[href="tel://#{strip_tags(LOCAL[:phone]).tr(' ()-', '')}"] == LOCAL[:phone]
+
+    address.text-md-right
+      a.icon-pseudo.icon-map-marker.text-href[
+        rel="nofollow"
+        href=LOCAL[:address][:url]
+        target='_blank'
+      ] == LOCAL[:address][:text]
+
+    .service.row
+      .col-sm-4
+        - path = service_path('certification')
+        a[
+          class=link_status(path)
+          href=path
+        ]
+          .icon.icon-certificat[aria-hidden= "true"]
+          .title = t 'service.certification.label', default: 'Сертификация'
+      .col-sm-4
+        - path = service_path('accreditation')
+        a[
+          class=link_status(path)
+          href= path
+        ]
+          .icon.icon-attestat[aria-hidden= "true"]
+          .title = t 'service.accreditation.label', default: 'Аккредитация'
+      .col-sm-4
+        - path = service_path('development')
+        a[
+          class=link_status(path)
+          href= path
+        ]
+          .icon.icon-documentation[aria-hidden= "true"]
+          .title = t 'service.development.label', default: 'Разработка технической документации'

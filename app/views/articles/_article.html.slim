@@ -1,0 +1,17 @@
+ruby:
+  path = article_path article
+  text = article.annotation.blank? ? strip_tags(article.content) : article.annotation
+
+
+.media.divided
+  = time_tag article.published_at.to_date
+
+  h3.media-heading: a[href=path] = article.header
+
+  - if !article.banner.blank?
+    .media-left
+      a.media-object[href=path]
+        = imagic_tag article.banner, class: 'media-image img-fluid',
+                                  alt: article.header.mb_chars.downcase
+
+  .media-body.media-content = truncate text, length: 256, separator: ' ', omission: '...'

@@ -1,0 +1,26 @@
+ru:
+  activerecord:
+    attributes:
+      certificate:
+        active: "Активно"
+        status: "Статус"
+        number: "Номер"
+        object: "Объект"
+        classifier: "Классификатор"
+        classifier_code: "Код по классификатору"
+        grouping: "Укрупнённая группировка"
+        issued_at: "Дата выдачи"
+        closed_at: "Дата окончания"
+        suspended_at: "Дата остановки"
+        resumed_at: "Дата возобновления"
+        canceled_at: "Дата аннулирования"
+        stages: "Этапы"
+        customer: "Заказчик"
+        agent: "Агент"
+        created_at: "Создано"
+        updated_at: "Изменено"
+    models:
+      certificate: "Сертификат"
+
+  active_admin:
+    certificates: "Сертификаты"

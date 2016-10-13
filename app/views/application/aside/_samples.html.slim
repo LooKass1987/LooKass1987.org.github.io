@@ -1,0 +1,40 @@
+section.samples
+  .headline
+    h3.title Образцы
+
+  - for item in [['00', 192, 272, 'сертификат'], ['10', 192, 272, 'аттестат'], ['11', 192, 136, 'аттестат']]
+    figure.scaled
+      img.img-fluid[
+        src=image_path("sample/thumb/#{item[0]}.jpg")
+        width=item[1]
+        height=item[2]
+        alt=item[3]
+        itemprop='thumbnailUrl'
+      ]
+      link[itemprop='image'
+           href=image_path("sample/#{item[0]}.jpg")]
+
+    /figure.scaled
+      canvas.img-fluid.bg-cover[
+        width=192
+        height=272
+        data-lazy=image_path("sample/thumb/#{item[0]}.jpg")
+      ]
+      link[itemprop='thumbnailUrl'
+        href=image_path("sample/thumb/#{item[0]}.jpg")]
+      link[itemprop='image'
+        href=image_path("sample/#{item[0]}.jpg")]
+
+
+    /- image = thumb %(app/assets/images/sample/#{_item[0]}.jpg), '192'
+    /- if image
+      figure.scaled
+        img.img-fluid[
+          src=image.src
+          width=image.width
+          height=image.height
+          alt=_item[1]
+          itemprop='thumbnailUrl'
+        ]
+        link[itemprop='image'
+             href=image_url(%(sample/#{_item[0]}.jpg))]

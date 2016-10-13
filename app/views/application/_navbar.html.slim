@@ -1,0 +1,81 @@
+.navbar.navbar-light.bg-faded
+  .wrapper
+    - if request.path == root_path
+      span.navbar-brand.text-accent.hidden-lg-up: span.icon.icon-home[aria-hidden='true']
+    - else
+      a.navbar-brand.hidden-lg-up[href=root_path]: span.icon.icon-home[aria-hidden='true']
+
+
+    button&button.navbar-toggler.hidden-lg-up[
+      data-target= '.navbar .collapse'
+      data-toggle= 'collapse'
+    ]: span.icon.icon-bars[aria-hidden='true']
+
+    ul.nav.navbar-nav.pull-xs-right
+      - if user_signed_in?
+        - if current_user.staff?
+          li.nav-item
+            a.nav-link[href=admin_root_path]: span.icon.icon-cogs[aria-hidden='true']
+        /li.nav-item
+          = link_to current_user, admin_user_path(current_user), \
+            class: 'nav-link'
+        li.nav-item
+          = link_to destroy_user_session_path, :method => :delete, \
+            class: 'nav-link' do
+            span.icon.icon-sign-out[aria-hidden='true']
+      - else
+        /li.nav-item[class=link_status(new_user_registration_path)]
+          a.nav-link[href=new_user_registration_path]: span.icon.icon-user-plus[aria-hidden='true']
+        li.nav-item[class=link_status(new_user_session_path)]
+          a.nav-link[href=new_user_session_path]: span.icon.icon-sign-in[aria-hidden='true']
+      li.nav-item.totop.m-l-3
+        a.nav-link[
+          href='#'
+          data-scroll
+        ]: span.icon.icon-chevron-up[aria-hidden='true']
+
+    .collapse.navbar-toggleable-md.pull-xs-left@region[aria-expanded="false"]
+      ul.nav.navbar-nav
+        li.nav-item[class=(request.path == about_path && 'active' || nil)]
+          a.nav-link[href=about_path] = t 'static.about.label', default: 'О нас'
+
+        li.nav-item.dropdown[class=link_status(services_path)]
+          a.nav-link.dropdown-toggle[
+            href="#"
+            aria-haspopup='true'
+            aria-expanded='false'
+            data-toggle='dropdown'
+          ] = t 'service.index.label'
+          .dropdown-menu
+            - _path = service_path('certification')
+            a.dropdown-item[
+              class=link_status(_path)
+              href=_path
+            ] = t 'service.certification.label'
+            - _path = service_path('accreditation')
+            a.dropdown-item[
+              class=link_status(_path)
+              href=_path
+            ] = t 'service.accreditation.label'
+            - _path = service_path('development')
+            a.dropdown-item[
+              class=link_status(_path)
+              href=_path
+            ] = t 'service.development.label'
+            .dropdown-divider
+            a.dropdown-item.emulator[
+              class=link_status(services_path)
+              href=services_path
+            ]: span.icon.icon-bars[aria-hidden='true']
+
+        li.nav-item.m-r-1[class=link_status(partners_path)]
+          a.nav-link[href=partners_path] = t 'partner.index.label'
+
+        li.nav-item.m-r-1[class=link_status(faq_path)]
+          a.nav-link[href=faq_path] = t 'static.faq.label'
+
+        li.nav-item.m-r-1[class=link_status(articles_path)]
+          a.nav-link[href=articles_path] = t 'article.index.label'
+
+        li.nav-item.m-r-1[class=link_status(contact_path)]
+          a.nav-link[href=contact_path] = t 'contact.show.label'

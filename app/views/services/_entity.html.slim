@@ -1,0 +1,65 @@
+.card.panel
+  h4.collapsed.card-title.icon-pseudo.icon-bars.text-href.onclick@tab[
+    data-toggle="collapse"
+    data-parent="##{id}"
+    data-target="##{id}#{i}"
+    aria-expanded="false"
+    aria-controls="#{id}#{i}"
+  ]  = name
+
+  .collapse@tabpanel[id="#{id}#{i}"]
+    .card-footer
+      dl.row
+        dt.col-xs-12.col-md-4 Юридическое лицо:
+        dd.col-xs-12.col-md-8: b.text-cyan = face
+        dt.col-xs-12.col-md-4 Руководитель ОС:
+        dd.col-xs-12.col-md-8
+          ==> boss[:name]
+          br>
+          == boss[:certificate]
+        dt.col-xs-12.col-md-4
+          == arias
+          | :
+        dd.col-xs-12.col-md-8
+          ul.m-b-0
+            - aria.each_index do |i|
+              li
+                = aria[i]
+                = i < aria.length - 1 ? ';' : '.'
+        dt.col-xs-12.col-md-4 Телефон / Факс:
+        dd.col-xs-12.col-md-8
+          - if phone.is_a?(Array)
+            - phone.each_index do |i|
+              a.icon-pseudo.icon-fw.icon-phone[
+                href="tel://#{strip_tags(phone[i]).tr(' ()-', '')}"
+              ] == phone[i]
+              - if i < phone.length
+                br
+          -else
+            a.icon-pseudo.icon-fw.icon-phone[
+              href="tel://#{strip_tags(phone).tr(' ()-', '')}"
+            ] == phone
+        dt.col-xs-12.col-md-4 Место нахождения:
+        dd.col-xs-12.col-md-8
+          - if address.is_a?(Hash)
+            a.icon-pseudo.icon-fw.icon-map-marker[
+              rel="nofollow"
+              href=address[:url]
+              target='_blank'
+            ] == address[:text]
+          - else
+            span.icon-pseudo.icon-fw.icon-map-marker == address
+        dt.col-xs-12.col-md-4 E-mail:
+        dd.col-xs-12.col-md-8
+          a.icon-pseudo.icon-fw.icon-envelope[
+            href="#"
+            aria-hidden='true'
+            data-mailto=Base64.encode64(email).squish
+          ]
+        - if defined? site
+          dt.col-xs-12.col-md-4 Сайт:
+          dd.col-xs-12.col-md-8
+            a.icon-pseudo.icon-fw.icon-globe[
+              href="//#{site}"
+              target='_blank'
+            ] = site

@@ -1,0 +1,67 @@
+@import "frontend/variables";
+@import "frontend/mixins";
+@import "../../../vendor/assets/stylesheets/bootstrap/variables";
+@import "../../../vendor/assets/stylesheets/bootstrap/mixins";
+
+#services {
+  .nav-justified {
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+    .nav-link {
+      padding: 0 .5rem .75rem;
+      font-size: .9375rem;
+      .icon {
+        display: block;
+        color: #057;
+        font-size: 4rem;
+      }
+      &:hover {
+        text-shadow: 0 1px 0 #fff;
+        background-color: #f7f7f7;
+        .icon {
+          color: #099;
+        }
+      }
+    }
+  }
+
+  .certification {
+    dd {
+      padding-top: 1rem;
+    }
+    dt {
+      padding-top: .5rem;
+      color: #077;
+      font-size: 3rem;
+      text-align: right;
+      .icon-building-o {
+        font-size: 115%;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .accreditation {
+    dl {
+      font-size: .9375rem;
+      &:last-child,
+      & dd:last-child ul {
+        margin-bottom: 0;
+      }
+      dt {
+        text-align: right;
+        small {
+          font-weight: inherit;
+        }
+        @include media-breakpoint-down(md) {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+

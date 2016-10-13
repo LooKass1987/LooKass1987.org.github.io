@@ -1,0 +1,75 @@
+ruby:
+  @schema ||= {}
+  if @schema[:main]
+    @schema[:main] = {itemprop: 'mainEntity',
+                      itemscope: true,
+                      itemtype: "http://schema.org/#{@schema[:main]}"}
+  else
+    @schema[:main] = {itemprop: 'mainContentOfPage'}
+  end
+  @side ||= 'left'
+  if @side
+    @schema[:main][:class]="side-prime side-#{@side}"
+    @schema[:aside] = {class: "side-#{@side == 'right' ? 'left' : 'right'}"}
+  end
+  @sidebar ||= ['application/aside/samples']
+  @sidebar = [@sidebar, 'application/aside/samples'] unless @sidebar.is_a?(Array)
+  @robots ||= 'index,follow'
+
+
+doctype html
+
+
+html[
+  lang='ru'
+  itemscope=true
+  itemtype="http://schema.org/#{@schema[:page] || 'WebPage'}"
+  ]
+
+
+  head
+    meta[charset='utf-8']
+    meta[
+      http-equiv='X-UA-Compatible'
+      content='IE=edge'
+      ]
+
+    - unless @description.blank?
+      meta[
+        name='description'
+        content=@description
+        ]
+    title = @title.blank? ?  t('exp.title') : @title
+    - unless @robots.blank?
+      meta[
+        name='robots'
+        content=@robots
+        ]
+    - unless @keywords.blank?
+      meta[
+        name='keywords'
+        content=@keywords
+        ]
+    - unless @canonical.blank?
+      link[
+        rel='canonical'
+        href=@canonical
+        ]
+
+    = render 'head'
+
+
+  body.container id=controller_name
+    = render 'header'
+    = render 'messages'
+
+    main#content *@schema[:main]
+      .headline: h1.duplet == @header
+      = yield
+
+    - if @side
+      aside#sidebar.side-add.side-caret *@schema[:aside]
+        - @sidebar.each do |item|
+          = render item
+
+    = render 'footer'

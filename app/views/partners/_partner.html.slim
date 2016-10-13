@@ -1,0 +1,28 @@
+ruby:
+  def logo(model)
+    model.website.blank? ?
+      {tag: 'span', class: 'media-object'} :
+      {tag: 'a',
+       class: 'media-object',
+       rel: 'nofollow',
+       href: model.website,
+       target: '_blank'}
+  end
+
+
+.media
+  .media-left
+    *logo(partner)
+      = imagic_tag partner.logotype, class: 'media-image img-fluid',
+                                   width: 192,
+                                   height: 192,
+                                   alt: partner.name.mb_chars.downcase
+
+  .media-body
+    h3.media-heading = partner.name
+    - if !(partner.content.blank? and partner.address.blank?)
+      .media-content.striped
+        - if !partner.content.blank?
+          == partner.content.squish
+        - if !partner.address.blank?
+          address = partner.address

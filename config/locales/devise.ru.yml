@@ -1,0 +1,5 @@
+ru:
+  devise:
+    registrations:
+      new:
+        characters_minimum: "символов минимум"

@@ -1,0 +1,25 @@
+ru:
+  activerecord:
+    attributes:
+      attestat:
+        active: "Активно"
+        status: "Статус"
+        number: "Номер"
+        object: "Объект"
+        issued_at: "Дата выдачи"
+        closed_at: "Дата окончания"
+        suspended_at: "Дата остановки"
+        resumed_at: "Дата возобновления"
+        canceled_at: "Дата аннулирования"
+        stages: "Этапы"
+        customer: "Заказчик"
+        customer_id: "Заказчик"
+        agent: "Агент"
+        agent_id: "Агент"
+        created_at: "Создано"
+        updated_at: "Изменено"
+    models:
+      attestat: "Аттестат"
+
+  active_admin:
+    attestats: "Аттестаты"

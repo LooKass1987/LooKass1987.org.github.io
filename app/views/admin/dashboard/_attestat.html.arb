@@ -1,0 +1,51 @@
+panel 'Аттестаты' do
+  table do
+    tr do
+      th class: 'h-size--40' do
+        'Действует'
+      end
+      th class: 'text-success' do
+        Attestat.continue.count
+      end
+    end
+    tr do
+      th 'Возобновлён'
+      th class: 'text-success' do
+        Attestat.resume.count
+      end
+    end
+    tr do
+      th 'Окончен'
+      th Attestat.close.count
+    end
+    tr do
+      th 'Остановлен'
+      th class: 'text-danger' do
+        Attestat.suspend.count
+      end
+    end
+    tr do
+      th 'Аннулирован'
+      th class: 'text-danger' do
+        Attestat.cancel.count
+      end
+    end
+    tr do
+      th 'Черновик'
+      th class: 'text-muted' do
+        Attestat.draft.count
+      end
+    end
+  end
+
+  h4 class: 'm-t-2' do
+    'Последние:'
+  end
+
+  ul do
+    Attestat.recent(5).map do |model|
+      li link_to("#{model.number} · #{model.object.truncate(96, separator: ' ', omission: '...')}",
+                 admin_attestat_path(model))
+    end
+  end
+end

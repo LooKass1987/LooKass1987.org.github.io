@@ -1,0 +1,17 @@
+section.m-b-2
+  .headline
+    h3.title: span.icon.icon-attestat[aria-hidden='true']
+
+  ul.nav.nav-pills.nav-stacked.card
+    - _path = item_service_path('accreditation', 'expert')
+    li.nav-item[class=(request.path == _path && 'active' || nil)]
+      a.nav-link[href=_path] = t 'service.accreditation.expert.label'
+    - _path = item_service_path('accreditation', 'agency')
+    li.nav-item[class=(request.path == _path && 'active' || nil)]
+      a.nav-link[href=_path] = t 'service.accreditation.agency.label'
+    - _path = item_service_path('accreditation', 'laboratory')
+    li.nav-item[class=(request.path == _path && 'active' || nil)]
+      a.nav-link[href=_path] = t 'service.accreditation.laboratory.label'
+    - _path = item_service_path('accreditation', 'competence')
+    li.nav-item[class=(request.path == _path && 'active' || nil)]
+      a.nav-link[href=_path] = t 'service.accreditation.competence.label'

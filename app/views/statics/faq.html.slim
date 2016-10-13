@@ -1,0 +1,4 @@
+.accordion@tablist[aria-multiselectable="true"]
+  - @faq.each_with_index  do |item, i|
+      - item[:i] = i
+      = render partial: 'faq', locals: item

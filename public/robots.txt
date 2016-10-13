@@ -1,0 +1,8 @@
+# http://www.robotstxt.org/robotstxt.html
+
+Sitemap: http://xn--m1aias.xn--p1ai/sitemap.xml
+
+User-agent: *
+Disallow: /admin
+Disallow: /users
+Host: xn--m1aias.xn--p1ai

@@ -1,0 +1,59 @@
+#footer {
+  clear: both;
+  margin-top: 2rem;
+  height: 5rem;
+  color: #aaa;
+
+  .wrapper {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .container:before {
+    content: "";
+    display: block;
+    border-top: 1px dotted #ddd
+  }
+
+  .copyright,
+  .credits {
+    margin: ($spacer-y / 2) 0;
+    font-size: .75rem;
+    line-height: 2rem;
+  }
+
+  .form-search {
+    margin-top: -($spacer-y / 4);
+    font-size: .75rem;
+    .form-control{
+      margin: ($input-padding-y / 2) 0;
+      padding: ($input-padding-y / 2) $input-padding-x !important;
+      @include border-radius($border-radius-lg);
+    }
+  }
+
+  .icon {
+    font-size: 1rem;
+  }
+
+  .onclick {
+    display: none;
+    @at-root .js & {
+      display: inline-block;
+      &:hover,
+      &:focus {
+        color: $link-hover-color;
+      }
+    }
+  }
+
+  .engine {
+    vertical-align: middle;
+    @include size(25px, 32px);
+    background: image_url('rails.png') center no-repeat transparent;
+    background-size: cover;
+  }
+}

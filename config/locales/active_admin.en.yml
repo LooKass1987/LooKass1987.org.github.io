@@ -1,0 +1,10 @@
+en:
+  active_admin:
+    batch_actions:
+      alerts:
+        active: "Models activated."
+        deactive: "Models deactivated."
+        published: "Models published."
+        unpublished: "Models unpublished."
+    index_list:
+      table_alter: "Details"
